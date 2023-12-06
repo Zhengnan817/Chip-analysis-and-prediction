@@ -3,20 +3,11 @@ import pandas as pd
 
 class DataProcess:
     """
-    A class for handling and processing data from a CSV file using Pandas.
-
-    This class provides methods to initialize the class with a CSV file, view the data,
-    check for null values, and remove rows with null values.
+    A class for processing and cleaning data from a CSV file using Pandas.
 
     Attributes:
     - filepath (str): The path to the CSV file.
-    - df (pd.DataFrame): The Pandas DataFrame containing the data from the CSV file.
-
-    Methods:
-    - __init__(self, filepath): Initialize the Data_process class with a filepath and read the CSV file into a Pandas DataFrame.
-    - view_data(self): Display the first few rows of the dataframe.
-    - check_data(self): Print information about the file and display the first row of the dataframe.
-    - remove_null(self): Remove rows with null values from the dataframe.
+    - df (pandas.DataFrame): The Pandas DataFrame containing the data from the CSV file.
     """
 
     def __init__(self, filepath):
