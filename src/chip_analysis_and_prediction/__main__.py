@@ -12,11 +12,13 @@ def main():
     print('------------------------------------------------')
     print('Chip-analysis-and-prediction')
     print('------------------------------------------------')
-
+    print('Data Summary')
     data_summary()
     print('------------------------------------------------')
+    print('EDA')
     exploratory_data_analysis()
     print('------------------------------------------------')
+    print('Inferences')
     inferences()
     print('------------------------------------------------')
 
