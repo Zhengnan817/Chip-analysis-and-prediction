@@ -1,0 +1,17 @@
+repos:
+- repo: https://github.com/Zhengnan817/Project-3-Data-Reconstruction-and-Analysis.git
+  rev: v3.2.0
+  hooks:
+    - id: ruff
+      language_version: python3.11
+    - id: check-merge-conflict
+    - id: check-toml
+    - id: check-yaml
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
