@@ -143,34 +143,6 @@ class Inferences:
         plt.ylabel('Average Die Size')
         plt.show()
 
-    def process_size_date_analysis(self):
-        """
-        Perform analysis on the relationship between process size and release date.
-
-        This method fits a linear regression model and displays the regression summary along with a scatter plot.
-
-        Returns:
-        None
-        """
-        # Prepare data for linear regression and plot the results using Seaborn and Matplotlib
-        X = sm.add_constant(self.df['Release Date'].astype(int))
-        y = self.df['Process Size']
-
-        model = sm.OLS(y, X)
-        results = model.fit()
-
-        # Display regression summary
-        print(results.summary())
-
-        # Plotting the scatter plot
-        sns.scatterplot(data=self.df, x='Release Date', y='Process Size', hue='Type')
-        plt.title('Scatter Plot with Regression Line')
-
-        # Plotting the regression line
-        plt.plot(self.df['Release Date'], results.predict(X), color='red', linewidth=2)
-
-        plt.show()
-
     def chip_attribute_overview(self):
         """
         Generate a Seaborn pairplot for numeric features in the chip dataset.
