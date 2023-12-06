@@ -54,6 +54,7 @@ class Inferences:
         Returns:
         None
         """
+        # Create a cross-tabulation and plot a bar chart using Seaborn
         crosstab = pd.crosstab(index=self.df['Vendor'], columns=self.df['Type'])
         crosstab.plot.bar(figsize=(7, 4), rot=0).set(ylabel='Type', title='Vendor')
 
@@ -66,9 +67,8 @@ class Inferences:
         Returns:
         None
         """
+        # Create a cross-tabulation and plot a bar chart using Matplotlib
         crosstab = pd.crosstab(index=self.df['Vendor'], columns=self.df['Type'])
-
-        # Using Matplotlib for a bar plot
         plt.figure(figsize=(7, 4))
         for col in crosstab.columns:
             plt.bar(crosstab.index, crosstab[col], label=col)
@@ -86,13 +86,12 @@ class Inferences:
         Returns:
         None
         """
+        # Create a pivot table for average frequency by product and vendor
         pivot_data = self.df.pivot_table(
             index=['Type', 'Vendor'], values='Process Size', aggfunc='mean'
         ).reset_index()
 
-        # Perform exploratory data analysis (EDA)
-
-        # Example: Bar plot for average frequency for each product and vendor
+        # Plot the average frequency for each product and vendor using Seaborn
         plt.figure(figsize=(12, 6))
         sns.barplot(
             x='Type',
@@ -117,6 +116,7 @@ class Inferences:
         Returns:
         None
         """
+        # Reshape the DataFrame for box plot and plot using Seaborn
         re_release_vendor = pd.melt(
             self.df.drop(['Transistors', 'Freq'], axis=1),
             id_vars=['Product', 'Type', 'Release Date', 'Vendor'],
@@ -135,6 +135,7 @@ class Inferences:
         Returns:
         None
         """
+        # Group data by vendor and plot the average Die Size using Matplotlib
         grouped_data = self.df.groupby('Vendor').agg({'Die Size': 'mean'}).reset_index()
         grouped_data.plot(kind='bar', y='Die Size', x='Vendor', legend=False)
         plt.title('Average Die Size by Vendor')
@@ -151,6 +152,7 @@ class Inferences:
         Returns:
         None
         """
+        # Prepare data for linear regression and plot the results using Seaborn and Matplotlib
         X = sm.add_constant(self.df['Release Date'].astype(int))
         y = self.df['Process Size']
 
@@ -176,7 +178,7 @@ class Inferences:
         Returns:
         None
         """
-        # Pairplot for numeric features
+        # Create a pairplot for numeric features using Seaborn
         sns.pairplot(self.df, hue='Type', diag_kind='kde')
         plt.suptitle('Pairplot for Numeric Features', y=1.02)
         plt.show()
@@ -188,6 +190,7 @@ class Inferences:
         Returns:
         None
         """
+        # Convert 'Release Date' to datetime, perform linear regression, and plot using Seaborn and Matplotlib
         self.df['Release Date'] = pd.to_datetime(
             self.df['Release Date'], format='%m/%d/%y'
         )
@@ -216,8 +219,10 @@ class Inferences:
         Returns:
         None
         """
+        # Import the necessary data processing module
         from .data_summary import DataProcess
 
+        # Load CPU data and preprocess it
         my_file_path = 'https://raw.githubusercontent.com/Zhengnan817/Project-3-Data-Reconstruction-and-Analysis/main/src/chip_analysis/data/chip_dataset.csv'
         cpu_table = DataProcess(my_file_path)
         df = cpu_table.view_data()
@@ -296,8 +301,10 @@ class Inferences:
         Returns:
         None
         """
+        # Import the necessary data processing module
         from .data_summary import DataProcess
 
+        # Load GPU data and preprocess it
         my_file_path = 'https://raw.githubusercontent.com/Zhengnan817/Project-3-Data-Reconstruction-and-Analysis/main/src/chip_analysis/data/chip_dataset.csv'
         cpu_table = DataProcess(my_file_path)
         df = cpu_table.view_data()
