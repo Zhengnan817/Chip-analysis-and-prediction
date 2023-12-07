@@ -258,7 +258,7 @@ class Inferences:
         result_df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
         # Scatter plot using Seaborn
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6), dpi=300)
         sns.scatterplot(x='Actual', y='Predicted', data=result_df)
         plt.plot(
             result_df['Actual'],
@@ -337,7 +337,7 @@ class Inferences:
         result_df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
         # Scatter plot using Seaborn
-        plt.figure(figsize=(10, 6))
+        plt.figure(figsize=(10, 6), dpi=300)
         sns.scatterplot(x='Actual', y='Predicted', data=result_df)
         plt.plot(
             result_df['Actual'],
