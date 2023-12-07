@@ -80,6 +80,7 @@ def exploratory_data_analysis():
         EDA_part.TDP_distribution_sns()
 
         EDA_part.TDP_distribution_plt()
+        break
 
 
 def inferences_prediction():
@@ -109,6 +110,7 @@ def inferences_prediction():
         inferences_analysis.cpu_freq_and_attri()
 
         inferences_analysis.gpu_freq_and_attri()
+        break
 
 
 main()
