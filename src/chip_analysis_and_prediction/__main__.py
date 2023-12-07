@@ -30,7 +30,7 @@ def main():
     exploratory_data_analysis()
     print('------------------------------------------------')
     print('Inferences')
-    inferences()
+    inferences_prediction()
     print('------------------------------------------------')
 
 
@@ -82,10 +82,11 @@ def exploratory_data_analysis():
         EDA_part.TDP_distribution_plt()
 
 
-def inferences():
+def inferences_prediction():
     """
     Perform inferences for chip analysis.
     """
+    print('This part include EDA and Predictive model.')
     my_file_path = 'https://raw.githubusercontent.com/Zhengnan817/Project-3-Data-Reconstruction-and-Analysis/main/src/chip_analysis/data/chip_dataset.csv'
     cpu_table = DataProcess(my_file_path)
     df = cpu_table.view_data()

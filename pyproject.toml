@@ -30,7 +30,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python"
 ]
-version = "1.4.0"
+version = "2.4.0"
 
 [project.urls]
 Repository = "https://github.com/Zhengnan817/Chip-analysis-and-prediction.git"
