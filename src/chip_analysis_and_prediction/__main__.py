@@ -60,27 +60,26 @@ def exploratory_data_analysis():
     cpu_table = DataProcess(my_file_path)
     df = cpu_table.view_data()
     EDA_part = EDA(df)
-    while True:
-        EDA_part.vendor_distribution_sns()
 
-        EDA_part.vendor_distribution_plt()
+    EDA_part.vendor_distribution_sns()
 
-        EDA_part.type_vendor_sns()
+    EDA_part.vendor_distribution_plt()
 
-        EDA_part.type_vendor_plt()
+    EDA_part.type_vendor_sns()
 
-        EDA_part.process_size_sns()
+    EDA_part.type_vendor_plt()
 
-        EDA_part.process_size_plt()
+    EDA_part.process_size_sns()
 
-        EDA_part.process_size_vendor_sns()
+    EDA_part.process_size_plt()
 
-        EDA_part.process_size_vendor_plt()
+    EDA_part.process_size_vendor_sns()
 
-        EDA_part.TDP_distribution_sns()
+    EDA_part.process_size_vendor_plt()
 
-        EDA_part.TDP_distribution_plt()
-        break
+    EDA_part.TDP_distribution_sns()
+
+    EDA_part.TDP_distribution_plt()
 
 
 def inferences_prediction():
@@ -92,25 +91,23 @@ def inferences_prediction():
     cpu_table = DataProcess(my_file_path)
     df = cpu_table.view_data()
     inferences_analysis = Inferences(df)
-    while True:
-        inferences_analysis.vendor_type_plt()
+    inferences_analysis.vendor_type_plt()
 
-        inferences_analysis.vendor_type_sns()
+    inferences_analysis.vendor_type_sns()
 
-        inferences_analysis.chip_attribute()
+    inferences_analysis.chip_attribute()
 
-        inferences_analysis.ave_freq_type_ven()
+    inferences_analysis.ave_freq_type_ven()
 
-        inferences_analysis.freq_and_TDP()
+    inferences_analysis.freq_and_TDP()
 
-        inferences_analysis.chip_attribute_overview()
+    inferences_analysis.chip_attribute_overview()
 
-        inferences_analysis.freq_trend()
+    inferences_analysis.freq_trend()
 
-        inferences_analysis.cpu_freq_and_attri()
+    inferences_analysis.cpu_freq_and_attri()
 
-        inferences_analysis.gpu_freq_and_attri()
-        break
+    inferences_analysis.gpu_freq_and_attri()
 
 
 main()
