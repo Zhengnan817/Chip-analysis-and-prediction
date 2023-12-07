@@ -1,3 +1,9 @@
+"""
+Module Name: inferences
+Description: This module contains functions and classes related to exploratory data analysis and inferences and the prediction model.
+Author: Zhengnan Li
+Date: December 6, 2023
+"""
 # Import necessary libraries
 import matplotlib.pyplot as plt
 import pandas as pd

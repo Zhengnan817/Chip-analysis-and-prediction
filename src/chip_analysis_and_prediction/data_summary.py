@@ -1,3 +1,9 @@
+"""
+Module Name: data_summary
+Description: This module contains functions and classes related to process data.
+Author: Zhengnan Li
+Date: December 6, 2023
+"""
 import pandas as pd
 
 
@@ -47,10 +53,22 @@ class DataProcess:
         return self.df.dropna()
 
     def data_clean(self):
+        """
+        Clean the data by converting 'Release Date' to datetime format.
+
+        Returns:
+        - pd.DataFrame: The cleaned DataFrame.
+        """
         self.df['Release Date'] = pd.to_datetime(
             self.df['Release Date'], format='%m/%d/%y'
         )
         return self.df
 
     def handle_missing_value(self):
+        """
+        Handle missing values by dropping rows with NaN in 'Process Size' and 'Release Date'.
+
+        Returns:
+        - pd.DataFrame: The DataFrame after handling missing values.
+        """
         self.df = self.df.dropna(subset=['Process Size', 'Release Date'])

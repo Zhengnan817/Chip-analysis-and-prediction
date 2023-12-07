@@ -1,7 +1,13 @@
+"""
+Module Name: exploratory_data_analysis
+Description: This module contains functions and classes related to exploratory data analysis
+Author: Zhengnan Li
+Date: December 6, 2023
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-import plotly.express as px
 
 
 class EDA:
@@ -207,6 +213,15 @@ class EDA:
         plt.show()
 
     def process_size_vendor_sns(self):
+        """
+        Create a boxplot using seaborn to visualize the distribution of process sizes for different vendors.
+
+        Parameters:
+        - self: The instance of the class containing the DataFrame.
+
+        Returns:
+        None
+        """
         # Create a boxplot using seaborn
         plt.figure(figsize=(10, 6))
         sns.boxplot(x='Vendor', y='Process Size', data=self.df)
@@ -214,6 +229,15 @@ class EDA:
         plt.show()
 
     def process_size_vendor_plt(self):
+        """
+        Create a boxplot using matplotlib to visualize the distribution of process sizes for different vendors.
+
+        Parameters:
+        - self: The instance of the class containing the DataFrame.
+
+        Returns:
+        None
+        """
         plt.figure(figsize=(10, 6))
         boxplot_data = [
             self.df['Process Size'][self.df['Vendor'] == vendor]
@@ -226,6 +250,15 @@ class EDA:
         plt.show()
 
     def process_size_date(self):
+        """
+        Create a scatter plot using seaborn to visualize the relationship between process size and release date.
+
+        Parameters:
+        - self: The instance of the class containing the DataFrame.
+
+        Returns:
+        None
+        """
         # Assuming self.df is your DataFrame containing 'Process Size', 'Release Date', and 'Type' columns
         sns.scatterplot(data=self.df, x='Release Date', y='Process Size', hue='Type')
         plt.show()
