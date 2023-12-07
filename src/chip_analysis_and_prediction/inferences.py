@@ -178,9 +178,6 @@ class Inferences:
         model = sm.OLS(y, X)
         results = model.fit()
 
-        # Display regression summary
-        print(results.summary())
-
         # Plotting the scatter plot
         sns.scatterplot(data=self.df, x='Release Date', y='Freq', hue='Type')
         plt.title('Scatter Plot with Regression Line')
