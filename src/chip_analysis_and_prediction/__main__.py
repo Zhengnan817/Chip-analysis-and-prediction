@@ -101,8 +101,6 @@ def inferences():
 
     inferences_analysis.freq_and_TDP()
 
-    inferences_analysis.process_size_date_analysis()
-
     inferences_analysis.chip_attribute_overview()
 
     inferences_analysis.freq_trend()
